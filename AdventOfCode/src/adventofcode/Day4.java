@@ -97,9 +97,4 @@ public class Day4 {
         System.out.println("Number correct:" + numberOfCorrect);
         return numberOfCorrect;
     }
-    public boolean checkForAna(char[] a,char[] b) {
-        Arrays.sort(a);
-        Arrays.sort(b);
-        return Arrays.equals(a, b);
-    }
 }
