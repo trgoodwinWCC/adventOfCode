@@ -21,12 +21,13 @@ public class Day4 {
             textFile = new Scanner(new File("input.txt"));
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Day4.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex.toString());
         }
         while(textFile.hasNextLine()) {
             tempLine=textFile.nextLine().trim();
             Scanner lineScan = new Scanner(tempLine);
             while(lineScan.hasNext()) {
-                tempWord = lineScan.next();
+                tempWord = lineScan.next().trim();
                 if (passphrase.contains(tempWord)) {
                     numberOfIncorrect++;
                     //break;
@@ -40,5 +41,6 @@ public class Day4 {
             lineScan.close();
         }
         System.out.println("Number incorrect:"+numberOfIncorrect);
+        System.out.println("Number correct:"+numberOfCorrect);
     }
 }
